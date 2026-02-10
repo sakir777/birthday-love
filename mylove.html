@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Happy Birthday My Love ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GIF BACKGROUND (correct usage) */
+body {
+  height: 100vh;
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.55)
+    ),
+    url("heart.gif") center / cover no-repeat;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* Glass-style container */
+.container {
+  text-align: center;
+  padding: 40px 25px;
+  max-width: 380px;
+  border-radius: 18px;
+  background: rgba(0,0,0,0);
+  backdrop-filter: blur(0px);
+  animation: fadeIn 2.5s ease;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 18px;
+}
+
+/* Subtle heartbeat emoji */
+.heart {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  animation: beat 1.3s infinite;
+}
+
+/* Message */
+.message {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  margin-top: 12px;
+  opacity: 0;
+  animation: reveal 3s forwards;
+  animation-delay: 2s;
+}
+
+.footer {
+  margin-top: 18px;
+  font-style: italic;
+  font-size: 0.95rem;
+  opacity: 0;
+  animation: reveal 3s forwards;
+  animation-delay: 4.5s;
+}
+
+/* Music button */
+.music-btn {
+  margin-top: 28px;
+  padding: 12px 26px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes beat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal {
+  to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>I Love You ❤️</h1>
+  <h2>Happy Birthday, My Love 🎂</h2>
+
+  <div class="heart">💖</div>
+
+  <div class="message">
+    You are my priority, my peace, my forever.<br/><br/>
+    I love you the most, and I promise I will never stop loving you, baby.<br/><br/>
+    You were always there for me — in my highs, my lows, my silence.<br/><br/>
+    <strong>Main ishq likhu tujhe ho jaaye…</strong><br/>
+    <strong>Fi dunniya wal aakhira</strong>, my heart chooses you. 💕
+  </div>
+
+  <button class="music-btn" onclick="toggleMusic()">▶ Play</button>
+
+  <div class="footer">
+    Forever yours,<br/>
+    with all my love ❤️
+  </div>
+</div>
+
+<!-- Background music -->
+<audio id="bgMusic">
+  <source src="ishq.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.querySelector(".music-btn");
+
+function toggleMusic() {
+  if (music.paused) {
+    music.play();
+    btn.textContent = "⏸ Pause";
+  } else {
+    music.pause();
+    btn.textContent = "▶ Play";
+  }
+}
+
+music.addEventListener("ended", () => {
+  btn.textContent = "▶ Play";
+});
+</script>
+
+</body>
+</html>
